@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chk whether 1 of 3 is >= 20.</title>
+  </head>
+  <body>
+    <script>
+      function check(x, y, z) {
+        return (
+          (x >= 20 && (x < y || x < z)) ||
+          (y >= 20 && (y < x || y < z)) ||
+          (z >= 20 && (z < x || z < y))
+        );
+      }
+      console.log(check(10, 30, 30));
+    </script>
+  </body>
+</html>

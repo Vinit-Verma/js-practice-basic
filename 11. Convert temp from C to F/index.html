@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Conversion</title>
+  </head>
+  <style>
+    #root {
+      border: solid 2px black;
+      padding: 5px;
+      width: fit-content;
+    }
+  </style>
+  <body onload="onLoad()">
+    <div id="root">
+      <input
+        type="radio"
+        id="celToFar"
+        name="select"
+        value="Celsius to Fahrenheit"
+        onclick="onLoad()"
+        checked
+      />
+      <label for="celToFar">Celsius to Fahrenheit</label>
+      <br /><br />
+      <input
+        type="radio"
+        id="farToCel"
+        name="select"
+        value="Celsius to Fahrenheit"
+        onclick="onLoad()"
+      />
+      <label for="farToCel">Fahrenheit to Celsius</label>
+      <br /><br />
+      <label for="temp">Temperature in &#8451; : </label>
+      <input type="text" id="cTemp" name="temp" />
+      <br /><br />
+      <label for="temp">Temperature in &#8457; : </label>
+      <input type="text" id="fTemp" name="temp" />
+      <br /><br />
+      <input type="submit" onclick="convertFunc()" value="Convert" />
+    </div>
+    <script>
+      function onLoad() {
+        document.getElementById("cTemp").value = "";
+        document.getElementById("fTemp").value = "";
+        let x = document.getElementById("celToFar").checked;
+        let y = document.getElementById("farToCel").checked;
+        if (x === true) {
+          document.getElementById("fTemp").disabled = true;
+          document.getElementById("cTemp").disabled = false;
+        } else if (y === true) {
+          document.getElementById("cTemp").disabled = true;
+          document.getElementById("fTemp").disabled = false;
+        }
+      }
+      function convertFunc() {
+        let c = document.getElementById("cTemp").value;
+        let f = document.getElementById("fTemp").value;
+        if (c !== "") {
+          let far = (9 * c) / 5 + 32;
+          document.getElementById("fTemp").value = far;
+        } else if (f !== "") {
+          let cel = (5 * (f - 32)) / 9;
+          document.getElementById("cTemp").value = cel;
+        }
+      }
+    </script>
+  </body>
+</html>

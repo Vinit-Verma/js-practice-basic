@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Within 20 of 100 or 400</title>
+  </head>
+  <body>
+    <label for="num">Enter the number : </label>
+    <input type="text" id="num" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <div class="result"></div>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const num = Number(document.getElementById("num").value);
+
+        if (Math.abs(100 - num) <= 20 || Math.abs(400 - num) <= 20) {
+          document.getElementsByClassName("result")[0].innerText = true;
+        } else {
+          document.getElementsByClassName("result")[0].innerText = false;
+        }
+      });
+    </script>
+  </body>
+</html>

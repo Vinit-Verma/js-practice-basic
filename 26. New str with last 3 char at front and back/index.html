@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New string with 3 char at front and back</title>
+    <style>
+      body {
+        border: solid 2px black;
+        width: fit-content;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label for="inp">Enter a string here : </label>
+      <input type="text" name="inp" id="inp" />
+      <br /><br />
+      <input type="button" value="Create a new string" id="btn" />
+      <br /><br />
+      <textarea name="res" id="res" cols="38" rows="3"></textarea>
+    </div>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        newString();
+      });
+      function newString() {
+        const str = document.getElementById("inp").value;
+        if (str.length >= 3) {
+          const char = str.substring(str.length - 3, str.length);
+          const newStr = char + str + char;
+          document.getElementById("res").innerText = newStr;
+        } else {
+          document.getElementById("res").innerText =
+            "Please enter a string with length more than 3 characters.";
+        }
+      }
+    </script>
+  </body>
+</html>

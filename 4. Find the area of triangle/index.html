@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area of triangle</title>
+  </head>
+  <body>
+    <div class="main"></div>
+    <script>
+      var side1 = 5;
+      var side2 = 6;
+      var side3 = 7;
+      var s = (side1 + side2 + side3) / 2;
+      console.log(s);
+      var area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
+      document.getElementsByClassName("main")[0].innerText =
+        "Area of the triangle is = " + area;
+    </script>
+  </body>
+</html>

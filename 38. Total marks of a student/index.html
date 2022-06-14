@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Total marks of a student.</title>
+    <style>
+      body {
+        width: fit-content;
+        border: solid 2px black;
+        padding: 10px;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Marks of a student out of 100</h2>
+    <label for="exam">Type of exam : </label>
+    <select class="right" name="exam" id="exam">
+      <option value="">Choose an examination</option>
+      <option value="monthly">Monthly</option>
+      <option value="halfYearly">Half Yearly</option>
+      <option value="final">Final</option>
+    </select>
+    <br /><br />
+    <label for="hindi">Hindi : </label>
+    <input type="number" class="right" name="hindi" id="hindi" /> <br /><br />
+    <label for="sanskrit">Sanskrit : </label>
+    <input type="number" class="right" name="sanskrit" id="sanskrit" />
+    <br /><br />
+    <label for="eng">English : </label>
+    <input type="number" class="right" name="eng" id="eng" /> <br /><br />
+    <label for="phy">Physics : </label>
+    <input type="number" class="right" name="phy" id="phy" /> <br /><br />
+    <label for="chem">Chemistry : </label>
+    <input type="number" name="chem" class="right" id="chem" /> <br /><br />
+    <label for="math">Mathematics : </label>
+    <input type="number" class="right" name="math" id="math" /> <br /><br />
+    <input type="button" value="Get result" id="btn" />
+    <br /><br />
+    <textarea name="res" id="res" cols="40" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const exam = document.getElementById("exam").value;
+        const h = +document.getElementById("hindi").value;
+        const s = +document.getElementById("sanskrit").value;
+        const e = +document.getElementById("eng").value;
+        const p = +document.getElementById("phy").value;
+        const c = +document.getElementById("chem").value;
+        const m = +document.getElementById("math").value;
+        const op = result(h, s, e, p, c, m, exam);
+        document.getElementById("res").innerText = op;
+      });
+      function result(a, b, c, d, e, f, type_of_exam) {
+        const total = a + b + c + d + e + f;
+        const per = (total / 600) * 100;
+        let res = "";
+        if (type_of_exam === "final") {
+          per >= 90 ? (res = "A+") : (res = "Below A+");
+        } else if (
+          type_of_exam === "monthly" ||
+          type_of_exam === "halfYearly"
+        ) {
+          per >= 89 ? (res = "A+") : (res = "Below A+");
+        } else if (type_of_exam === "") {
+          res = "Please select the type of exam.";
+        }
+        return res;
+      }
+    </script>
+  </body>
+</html>

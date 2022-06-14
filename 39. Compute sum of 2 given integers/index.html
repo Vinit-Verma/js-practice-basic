@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of two integers.</title>
+    <style>
+      body {
+        border: solid 2px black;
+        padding: 10px;
+        width: fit-content;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Compute sum of two integers.</h2>
+    <div>
+      <label for="num1">Enter the first number : </label>
+      <input type="number" id="num1" class="right" />
+      <br /><br />
+      <label for="num2">Enter the second number : </label>
+      <input type="number" id="num2" />
+      <br /><br />
+      <input type="button" value="Compute" id="btn" />
+      <br /><br />
+      <label for="res">Result :-</label>
+      <br />
+      <textarea name="res" id="res" cols="43" rows="5"></textarea>
+    </div>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const num1 = +document.getElementById("num1").value;
+        const num2 = +document.getElementById("num2").value;
+        const res = compute(num1, num2);
+        document.getElementById("res").innerText = res;
+      });
+      function compute(a, b) {
+        const total = a + b;
+        const num = 50 <= total && total <= 80 ? 65 : 80;
+        return num;
+      }
+    </script>
+  </body>
+</html>

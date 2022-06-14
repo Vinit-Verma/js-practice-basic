@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pos or neg int</title>
+  </head>
+  <body>
+    <label for="int1">Integer 1 : </label>
+    <input type="text" id="int1" />
+    <br /><br />
+    <label for="int2">Integer 2 : </label>
+    <input type="text" id="int2" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <div class="result"></div>
+
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const num1 = Number(document.getElementById("int1").value);
+        const num2 = Number(document.getElementById("int2").value);
+        if (num1 >= 0 && num2 >= 0) {
+          document.getElementsByClassName("result")[0].innerText =
+            "Both the integers are positive.";
+        } else if (num1 < 0 && num2 < 0) {
+          document.getElementsByClassName("result")[0].innerText =
+            "Both the integers are negative.";
+        } else if (num1 < 0 && num2 >= 0) {
+          document.getElementsByClassName("result")[0].innerText =
+            "Number 1 is negative but number 2 is positive.";
+        } else if (num1 >= 0 && num2 < 0) {
+          document.getElementsByClassName("result")[0].innerText =
+            "Number 1 is positive but number 2 is negative.";
+        }
+
+        console.log(num1, num2);
+      });
+    </script>
+  </body>
+</html>

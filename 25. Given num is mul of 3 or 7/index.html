@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mul of 3 or 7</title>
+    <style>
+      body {
+        border: solid 2px black;
+        padding: 10px;
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label for="num">Enter the number : </label>
+      <input type="text" id="num" />
+      <br /><br />
+      <input id="btn" type="button" value="Exec" />
+      <br /><br />
+      <textarea name="res" id="res" cols="38" rows="5"></textarea>
+    </div>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        let num = +document.getElementById("num").value;
+        if (num % 3 == 0) {
+          document.getElementById("res").innerText =
+            "Number is divisible by 3.";
+        } else if (num % 7 == 0) {
+          document.getElementById("res").innerText =
+            "Number is divisible by 7.";
+        }
+      });
+    </script>
+  </body>
+</html>

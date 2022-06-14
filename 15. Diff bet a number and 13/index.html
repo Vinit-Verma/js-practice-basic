@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Difference</title>
+    <style>
+      .container {
+        border: solid 2px black;
+        width: fit-content;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label for="num">Enter a number : </label>
+      <input type="text" id="num" name="num" />
+      <br /><br />
+      <input type="button" value="Difference" name="btn" id="btn" />
+      <br /><br />
+      <label for="num">Difference is : </label>
+      <input type="text" id="res" name="res" readonly style="float: right" />
+    </div>
+    <script>
+      btn.addEventListener("click", () => {
+        let num = document.getElementById("num").value;
+        let resOutput = document.getElementById("res");
+        if (num <= 13) {
+          let res = 13 - num;
+          resOutput.value = res;
+        } else if (num > 13) {
+          let res = (num - 13) * 2;
+          resOutput.value = res;
+        }
+      });
+    </script>
+  </body>
+</html>

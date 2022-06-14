@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check 2 numbers.</title>
+    <style>
+      body {
+        border: solid 5px black;
+        padding: 10px;
+        width: fit-content;
+      }
+      #num1 {
+        float: right;
+      }
+      #btn {
+        padding: 5px;
+        background-color: black;
+        color: blanchedalmond;
+        border: solid 2px red;
+        width: 25vw;
+        height: 5vh;
+        border-radius: 5px;
+      }
+      #btn:hover {
+        background-color: blueviolet;
+        box-shadow: 5px 5px 10px black;
+        border: solid white 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="num1">Enter the first number : </label>
+    <input type="text" name="" id="num1" />
+    <br /><br />
+    <label for="num2">Enter the second number : </label>
+    <input type="text" name="" id="num2" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <div class="result"></div>
+    <script>
+      let bool = false;
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const num1 = Number(document.getElementById("num1").value);
+        const num2 = Number(document.getElementById("num2").value);
+        if (num1 === 50 || num2 === 50 || num1 + num2 === 50) {
+          bool = true;
+          console.log(bool);
+          document.getElementsByClassName("result")[0].innerText = bool;
+        } else {
+          bool = false;
+          document.getElementsByClassName("result")[0].innerText = bool;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert num into hrs and mins</title>
+    <style>
+      * {
+        padding: 0;
+        /* margin: 0; */
+      }
+      body {
+        border: solid black 2px;
+        padding: 10px;
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="inp">Enter a number : </label>
+    <input type="number" id="num" />
+    <br />
+    <br />
+    <button id="btn">Convert</button>
+    <br /><br />
+    <label for="res">Result :-</label>
+    <br />
+    <textarea name="res" id="res" cols="35" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const num = document.getElementById("num").value;
+        let hr = Math.floor(num / 60);
+        if (hr > 24) {
+          hr = hr - 24;
+        }
+        const min = num % 60;
+        document.getElementById("res").innerText =
+          "The time is " + hr + ":" + min;
+      });
+    </script>
+  </body>
+</html>

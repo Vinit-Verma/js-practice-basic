@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Int bet 50 and 99</title>
+    <style>
+      body {
+        width: fit-content;
+        border: solid 2px black;
+        padding: 10px;
+      }
+      #int1 {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="int1">Ener the first integer : </label>
+    <input type="number" name="int1" id="int1" />
+    <br /><br />
+    <label for="int2">Ener the second integer : </label>
+    <input type="number" name="int2" id="int2" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <textarea name="res" id="res" cols="40" rows="4"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const int1 = +document.getElementById("int1").value;
+        const int2 = +document.getElementById("int2").value;
+        chk(int1, int2);
+      });
+      function chk(a, b) {
+        if (50 <= a && a <= 99 && 50 <= b && b <= 99) {
+          document.getElementById("res").innerText =
+            "Both integers are in the range of 50 to 99.";
+        } else if (50 <= a && a <= 99) {
+          document.getElementById("res").innerText =
+            "First integer is in the range of 50 to 99.";
+        } else if (50 <= b && b <= 99) {
+          document.getElementById("res").innerText =
+            "Second integer is in the range of 50 to 99.";
+        } else {
+          document.getElementById("res").innerText =
+            "No integer is in the range of 50 to 99.";
+        }
+      }
+    </script>
+  </body>
+</html>

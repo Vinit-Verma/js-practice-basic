@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New str with first 3 char in lower case.</title>
+    <style>
+      body {
+        border: solid 2px black;
+        width: fit-content;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="str">Enter a string : </label>
+    <input type="text" name="str" id="str" />
+    <br /><br />
+    <input type="button" value="Convert" id="btn" />
+    <br /><br />
+    <label for="res">Result :-</label>
+    <br />
+    <textarea name="res" id="res" cols="34" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const str = document.getElementById("str").value;
+        const word = lowerCase(str);
+        const res = document.getElementById("res");
+        res.innerText = word;
+        // document.getElementById("res").innerText = word;
+      });
+      function lowerCase(string) {
+        const sub = string.substring(0, 3).toLowerCase();
+        const sub2 = string.substring(3, string.length);
+        return sub + sub2;
+      }
+    </script>
+  </body>
+</html>

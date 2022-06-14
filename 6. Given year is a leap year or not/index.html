@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the leap year.</title>
+  </head>
+  <body>
+    <form id="myForm" action="#">
+      <label for="year">Enter the Year : </label>
+      <input type="text" id="year" name="year" />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      let form = document.getElementById("myForm");
+      function handleSubmit(e) {
+        e.preventDefault();
+        let text = document.getElementById("year").value;
+        let ans = text % 100 === 0 ? text % 400 === 0 : text % 4 === 0;
+        ans === true
+          ? console.log(text, "is a leap year.")
+          : console.log(text, "is not a leap year");
+      }
+      form.addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>

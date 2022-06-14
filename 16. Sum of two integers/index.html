@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of two integers.</title>
+    <style>
+      body {
+        border: solid 2px black;
+        padding: 10px;
+        width: fit-content;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="int1">Enter the first integer : </label>
+    <input type="text" id="int1" name="int1" class="right" />
+    <br />
+    <br />
+    <label for="int2">Enter the second integer : </label>
+    <input type="text" id="int2" name="int2" />
+    <br />
+    <br />
+    <input type="button" name="btn" id="btn" value="Calculate" />
+    <br />
+    <br />
+    <label for="int2">Sum of two integers is : </label>
+    <input type="text" id="final" name="final" readonly class="right" />
+
+    <script>
+      btn.addEventListener("click", () => {
+        let num1 = Number(document.getElementById("int1").value);
+        let num2 = Number(document.getElementById("int2").value);
+
+        if (num1 === num2) {
+          let res = (num1 + num2) * 3;
+          document.getElementById("final").value = res;
+        } else {
+          let res = num1 + num2;
+          document.getElementById("final").value = res;
+        }
+      });
+    </script>
+  </body>
+</html>

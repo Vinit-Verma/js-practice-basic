@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display the current date</title>
+  </head>
+  <body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <script>
+      var today = new Date();
+      var day = today.getDate();
+      var month = today.getMonth();
+      var year = today.getFullYear();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + (month + 1);
+      }
+      var typeOne = month + "-" + day + "-" + year;
+      document.getElementsByClassName("one")[0].innerText =
+        "mm-dd-yyyy : " + typeOne;
+
+      var typeTwo = month + "/" + day + "/" + year;
+      document.getElementsByClassName("two")[0].innerText =
+        "mm/dd/yyyy : " + typeTwo;
+
+      var typeThree = day + "-" + month + "-" + year;
+      document.getElementsByClassName("three")[0].innerText =
+        "dd-mm-yyyy : " + typeThree;
+
+      var typeFour = day + "/" + month + "/" + year;
+      document.getElementsByClassName("four")[0].innerText =
+        "dd/mm/yyyy : " + typeFour;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove a char</title>
+    <style>
+      body {
+        border: solid 2px black;
+        padding: 10px;
+        width: fit-content;
+      }
+      .float-right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="str">Enter a string : </label>
+    <input type="text" id="str" class="float-right" />
+    <br /><br />
+    <label for="num">Remove a character at index : </label>
+    <input type="number" name="num" id="num" />
+    <br /><br />
+    <input type="button" value="Remove character" id="btn" />
+    <br /><br />
+    <label for="text">Final string is as follows :- </label><br /><br />
+    <textarea name="text" id="text" cols="30" rows="4"></textarea>
+
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const str = document.getElementById("str").value;
+        const index = Number(document.getElementById("num").value);
+
+        str_part1 = str.substring(0, index - 1);
+        str_part2 = str.substring(index, str.length);
+
+        final = str_part1 + str_part2;
+        document.getElementById("text").innerText = str_part1 + str_part2;
+      });
+    </script>
+  </body>
+</html>

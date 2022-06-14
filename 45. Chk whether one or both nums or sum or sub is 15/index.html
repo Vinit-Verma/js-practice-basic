@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whether one of the nums, sum or diff is 15.</title>
+    <style>
+      body {
+        width: fit-content;
+        border: solid 2px black;
+        padding: 10px;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>One of the num, sum or diff is 15.</h2>
+    <label for="num1">Enter the first number : </label>
+    <input type="number" class="right" name="num1" id="num1" />
+    <br /><br />
+    <label for="num2">Enter the second number : </label>
+    <input type="number" name="num2" id="num2" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <label for="res">Result :-</label>
+    <br />
+    <textarea name="res" id="res" cols="44" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        let reply;
+        const num1 = +document.getElementById("num1").value;
+        const num2 = +document.getElementById("num2").value;
+        reply = check(num1, num2);
+        document.getElementById("res").innerText = reply;
+      });
+
+      function check(x, y) {
+        if (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

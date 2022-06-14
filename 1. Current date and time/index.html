@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current date and time.</title>
+  </head>
+  <body>
+    <div class="main">Today is :</div>
+    <div id="div2"></div>
+
+    <script>
+      var currentDate = new Date();
+      var day = currentDate.getDay();
+      //   console.log("Day : ", day);
+      var weekdaysList = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      var hour = currentDate.getHours();
+      var minute = currentDate.getMinutes();
+      var seconds = currentDate.getSeconds();
+      hour = hour >= 12 ? hour - 12 : hour;
+      var add = hour >= 12 ? "PM" : "AM";
+
+      if (hour === 0 && add === "AM") {
+        if (minute === 0 && seconds === 0) {
+          hour = "12";
+          add = "Midnight";
+        } else {
+          hour = "12";
+          add = "AM";
+        }
+      }
+      if (hour === 0 && add === "PM") {
+        if (minute === 0 && seconds === 0) {
+          hour = "12";
+          add = "Noon";
+        } else {
+          hour = "12";
+          add = "PM";
+        }
+      }
+
+      document.getElementsByClassName("main")[0].innerText =
+        "Today is : " + weekdaysList[day];
+      document.getElementById("div2").innerText =
+        "Current time is : " + hour + ":" + minute + ":" + seconds + add;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number is in the range of 40 - 10000</title>
+    <style>
+      body {
+        border: solid 2px black;
+        padding: 10px;
+        width: fit-content;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Num in the range of 40 -10000</h3>
+    <label for="num">Enter number : </label>
+    <input type="number" name="num" id="num" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <script>
+      function check() {
+        const num = document.getElementById("num").value;
+        if (num < 40 || num > 10000) {
+          console.log("false");
+        } else if (num > 40 && num < 10000) {
+          console.log("true");
+        }
+      }
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        check();
+      });
+    </script>
+  </body>
+</html>

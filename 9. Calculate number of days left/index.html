@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number of days left</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      let today = new Date();
+      var cmas = new Date(today.getFullYear(), 11, 25);
+      //   console.log("christmas ", cmas);
+      if (today.getMonth() == 11 && today.getDay() > 25) {
+        cmas.setFullYear(cmas.getFullYear() + 1);
+      }
+      const one_day = 24 * 60 * 60 * 1000;
+      const final = Math.ceil((cmas.getTime() - today.getTime()) / one_day);
+      let div = document.getElementById("root");
+      div.innerText = final + " days left till Xmas";
+    </script>
+  </body>
+</html>

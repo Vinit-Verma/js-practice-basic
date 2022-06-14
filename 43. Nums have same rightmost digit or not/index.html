@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rightmost digit are same or not.</title>
+    <style>
+      body {
+        border: solid 2px black;
+        width: fit-content;
+        padding: 10px;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Check whether last digit of nums are same or not.</h2>
+    <label for="num1">Enter the first number : </label>
+    <input type="number" id="num1" class="right" />
+    <br /><br />
+    <label for="num2">Enter the second number : </label>
+    <input type="number" id="num2" class="right" />
+    <br /><br />
+    <label for="num3">Enter the third number : </label>
+    <input type="number" id="num3" class="right" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <label for="res">Result :-</label>
+    <br />
+    <textarea name="res" id="res" cols="66" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const num3 = document.getElementById("num3").value;
+        const res = check(num1, num2, num3);
+        const textArea = document.getElementById("res");
+        textArea.innerText = res;
+      });
+      function check(a, b, c) {
+        return a % 10 === b % 10 || b % 10 === c % 10 || c % 10 === a % 10;
+      }
+    </script>
+  </body>
+</html>

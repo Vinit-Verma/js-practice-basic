@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating left to right</title>
+  </head>
+  <body onload="animate_string('target'); animateString('taget2');">
+    <pre id="target">My name is Vinit Kumar Verma. &rarr; &rarr; </pre>
+    <pre id="target2">My name is Vinit Kumar Verma. &larr; &larr; </pre>
+    <script>
+      function animate_string(id) {
+        const element = document.getElementById(id);
+        const textNode = element.childNodes[0];
+        let text = textNode.data;
+        setInterval(() => {
+          text = text[text.length - 1] + text.substring(0, text.length - 1);
+          //   console.log(text);
+          textNode.data = text;
+        }, 200);
+      }
+      function animateString(id) {
+        const element = document.getElementById("target2");
+        const textNode = element.childNodes[0];
+        let text = textNode.data;
+        setInterval(() => {
+          text = text.substring(1, text.length) + text[0];
+          //   console.log(text);
+          textNode.data = text;
+        }, 200);
+      }
+    </script>
+  </body>
+</html>

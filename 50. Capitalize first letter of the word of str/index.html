@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitalize first letter of word in a str</title>
+    <style>
+      body {
+        width: fit-content;
+        padding: 10px;
+        border: solid 2px black;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Capitalize the first letter of word.</h3>
+    <label for="str">Enter the string here : </label>
+    <input type="text" id="str" />
+    <br /><br />
+    <input type="button" value="Capitalize" id="btn" />
+    <br /><br />
+    <label for="text">Result :-</label>
+    <br />
+    <textarea name="text" id="text" cols="40" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const strg = document.getElementById("str").value;
+        const textArea = document.getElementById("text");
+        let res = rev(strg);
+        textArea.value = res;
+      });
+      function rev(str) {
+        str = str.split(" ");
+        for (var i = 0; i < str.length; i++) {
+          str[i] = str[i][0].toUpperCase() + str[i].substring(1);
+        }
+        return str.join(" ");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math operations</title>
+    <style>
+      form {
+        border: solid 2px black;
+        padding: 5px;
+        width: fit-content;
+      }
+      #num1 {
+        margin-left: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <form action="#" id="myForm">
+        <label for="num1">Please enter the first number : </label>
+        <input type="text" name="num1" id="num1" />
+        <br /><br />
+        <label for="num2">Please enter the second number : </label>
+        <input type="text" name="num2" id="num2" />
+        <br />
+        <br />
+        <input onClick="addFun()" type="button" id="add" value="Add" />
+        <input onclick="subFun()" type="button" id="sub" value="Subtract" />
+        <input onclick="mulFun()" type="button" id="mul" value="Multiply" />
+        <input onclick="divFun()" type="button" id="div" value="Divide" />
+        <br /><br />
+        <label for="result">Result is :</label>
+        <input type="text" id="result" name="result" readonly />
+      </form>
+    </div>
+    <script>
+      //Addition operation.
+      //   const addBtn = document.getElementById("add");
+      //   addBtn.addEventListener("click", add);
+      function addFun() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        const result = num1 + num2;
+        document.getElementById("result").value = result;
+      }
+      //Subtraction operation.
+      //   const subBtn = document.getElementById("sub");
+      //   subBtn.addEventListener("click", sub);
+      function subFun() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        const result = num1 - num2;
+        document.getElementById("result").value = result;
+      }
+      //Multiplication operation.
+      //   const mulBtn = document.getElementById("mul");
+      //   mulBtn.addEventListener("click", mul);
+      function mulFun() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        const result = num1 * num2;
+        document.getElementById("result").value = result;
+      }
+      //Division operation.
+      //   const divBtn = document.getElementById("div");
+      //   divBtn.addEventListener("click", div);
+      function divFun() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        const result = num1 / num2;
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>

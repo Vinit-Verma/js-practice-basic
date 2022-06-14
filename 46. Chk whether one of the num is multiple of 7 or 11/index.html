@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whether 1 of 2 nums are multiple of 7 or 11.</title>
+    <style>
+      body {
+        border: solid 2px black;
+        width: fit-content;
+        padding: 10px;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Check if one of the nums are multiple of 7 or 11.</h2>
+    <label for="num1">Enter the first number : </label>
+    <input type="number" id="num1" class="right" />
+    <br /><br />
+    <label for="num2">Enter the second number : </label>
+    <input type="number" id="num2" class="right" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <label for="res">Result :-</label>
+    <br />
+    <textarea name="res" id="res" cols="64" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const res = check(num1, num2);
+        document.getElementById("res").innerText = res;
+      });
+
+      function check(x, y) {
+        console.log(x, y);
+        if (x % 7 === 0 || x % 11 === 0 || y % 7 === 0 || y % 11 === 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

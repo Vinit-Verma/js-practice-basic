@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print the contents of the current window</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>This is headeing from H1.</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+        provident ullam repellendus consequuntur deserunt soluta. Ipsum
+        necessitatibus rerum, error eius incidunt, ullam fugit possimus neque
+        eveniet id nostrum quam laboriosam saepe officia fuga sint dolorum!
+      </p>
+      <button id="btn" onclick="onClickHandler()">Print page</button>
+    </div>
+    <script>
+      function onClickHandler() {
+        console.log("object");
+        window.print();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding new string</title>
+  </head>
+  <body>
+    <label for="inp">Enter a string here : </label>
+    <input type="text" class="inp" />
+    <br /><br />
+    <input type="button" value="Add 'Py' in the front of the string" id="btn" />
+    <br /><br />
+    <textarea name="text" class="text" cols="30" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const str = document.getElementsByClassName("inp")[0].value;
+        func(str);
+      });
+      function func(st) {
+        if (st === null || st.substring(0, 2) === "Py") {
+          document.getElementsByClassName("text")[0].value =
+            "'Py' already exists in the front of string - " + st;
+        } else {
+          document.getElementsByClassName("text")[0].value = "Py" + st;
+        }
+      }
+    </script>
+  </body>
+</html>

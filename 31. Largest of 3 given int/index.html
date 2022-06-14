@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>largest of 3 given integers</title>
+    <style>
+      body {
+        border: solid 2px black;
+        width: fit-content;
+        padding: 10px;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="int1">Enter the first integer : </label>
+    <input type="number" class="right" name="int1" id="int1" />
+    <br /><br />
+    <label for="int2">Enter the second integer : </label>
+    <input type="number" name="int2" id="int2" />
+    <br /><br />
+    <label for="int3">Enter the third integer : </label>
+    <input type="number" name="int3" class="right" id="int3" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <textarea name="res" id="res" cols="40" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const x = document.getElementById("int1").value;
+        const y = document.getElementById("int2").value;
+        const z = document.getElementById("int3").value;
+        const fun = largestNumber(x, y, z);
+        document.getElementById("res").innerText = "Largest number is : " + fun;
+      });
+      function largestNumber(a, b, c) {
+        max_num = 0;
+        if (a > b) {
+          max_num = a;
+          console.log("first");
+        } else {
+          max_num = b;
+          console.log("second");
+        }
+        if (c > max_num) {
+          console.log("third");
+          max_num = c;
+        }
+        return max_num;
+        // return (document.getElementById("res").innerText =
+        //   "Largest number is : " + max_num);
+      }
+    </script>
+  </body>
+</html>

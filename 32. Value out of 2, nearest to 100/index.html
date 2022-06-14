@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Value nearest to 100.</title>
+    <style>
+      body {
+        border: solid 2px black;
+        width: fit-content;
+        padding: 10px;
+      }
+      .right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="num1">Enter the first number : </label>
+    <input type="number" name="num1" id="num1" class="right" />
+    <br /><br />
+    <label for="num2">Enter the second number : </label>
+    <input type="number" name="num2" id="num2" />
+    <br /><br />
+    <input type="button" value="Check" id="btn" />
+    <br /><br />
+    <textarea name="res" id="res" cols="43" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", formHandler);
+      function formHandler() {
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const sub1 = Math.abs(100 - num1);
+        const sub2 = Math.abs(100 - num2);
+        if (sub1 < sub2)
+          return (document.getElementById("res").innerText =
+            num1 + " is closer to 100");
+        if (sub1 > sub2)
+          return (document.getElementById("res").innerText =
+            num2 + " is closer to 100");
+      }
+    </script>
+  </body>
+</html>
