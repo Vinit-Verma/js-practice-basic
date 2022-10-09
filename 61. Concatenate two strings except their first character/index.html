@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse a given string</title>
+    <style>
+      body {
+        width: fit-content;
+        border: solid 2px black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Concatenate two strings except their first character</h2>
+    <label for="str1">Enter string 1 : </label>
+    <input type="text" id="str1" />
+    <br /><br />
+    <label for="str2">Enter string 2 : </label>
+    <input type="text" id="str2" />
+    <br /><br />
+    <input type="button" value="Concat" id="btn" />
+    <br /><br />
+    <label for="txt">Result :-</label>
+    <br />
+    <textarea name="txt" id="txt" cols="30" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const str1 = document.getElementById("str1").value;
+        const str2 = document.getElementById("str2").value;
+
+        if (str1.length > 0 && str2.length > 0) {
+          document.getElementById("txt").innerText =
+            str1.substring(1, str1.length) + str2.substring(1, str2.length);
+        } else {
+          document.getElementById("txt").innerText =
+            "Please enter both strings";
+        }
+      });
+    </script>
+  </body>
+</html>
