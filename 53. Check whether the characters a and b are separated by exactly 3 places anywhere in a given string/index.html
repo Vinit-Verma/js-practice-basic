@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      JavaScript Convert the letters of a given string in alphabetical order
+    </title>
+    <style>
+      body div:first-child {
+        border: solid 2px black;
+        padding: 10px;
+        width: fit-content;
+      }
+      body div:first-child button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="input">Enter your text here :</label>
+      <input type="text" id="input" />
+      <br />
+      <button>Arrange alphabetically</button>
+      <br />
+      <h4>Result :-</h4>
+      <textarea></textarea>
+    </div>
+    <script>
+      const handleClick = () => {
+        const ip = document.getElementsByTagName("input");
+        const op = document.getElementsByTagName("textarea");
+        console.log("My console", ip[0].value);
+        const checkResult = /a...b/.test(ip[0].value);
+        op[0].innerText = checkResult;
+      };
+      const btn = document.getElementsByTagName("button");
+      btn[0].addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>
