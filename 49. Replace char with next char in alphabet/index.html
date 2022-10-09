@@ -25,6 +25,28 @@
     <textarea name="txt" id="txt" cols="38" rows="5"></textarea>
     <script>
       const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const ip = document.getElementById("text").value;
+        const split_string = ip.split("");
+        for (let i = 0; i < split_string.length; i++) {
+          switch (split_string[i]) {
+            case "":
+              break;
+            case "z":
+              split_string[i] = "a";
+              break;
+            case "Z":
+              split_string[i] = "A";
+              break;
+            default:
+              split_string[i] = String.fromCharCode(
+                1 + split_string[i].charCodeAt(0)
+              );
+          }
+        }
+        const final_string = split_string.join("");
+        document.getElementById("txt").innerText = final_string;
+      });
     </script>
   </body>
 </html>
