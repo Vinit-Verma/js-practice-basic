@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse a given string</title>
+    <style>
+      body {
+        width: fit-content;
+        border: solid 2px black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Count the number of vowels in a given string</h2>
+    <label for="str">Enter the string : </label>
+    <input type="text" id="str" />
+    <br /><br />
+    <input type="button" value="Count" id="btn" />
+    <br /><br />
+    <label for="txt">Total number of vowels are :-</label>
+    <br />
+    <textarea name="txt" id="txt" cols="30" rows="5"></textarea>
+    <script>
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        const str = document.getElementById("str").value;
+
+        const pattern = /[aeiou]/g;
+        // const result = pattern.test(str);
+        const result = str.match(pattern);
+        console.log("My console", result);
+        document.getElementById("txt").innerText = result.length;
+      });
+    </script>
+  </body>
+</html>
