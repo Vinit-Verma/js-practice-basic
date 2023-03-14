@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Move last three character to the start of a specified string</title>
+    <style>
+      .outer-div {
+        border: solid 2px black;
+        height: 300px;
+        padding: 15px;
+        aspect-ratio: 2;
+        box-shadow: inset 2px 2px 5px 5px grey, inset -2px -2px 5px 5px grey;
+        display: grid;
+        grid-template-columns: 40% 60%;
+      }
+      .string-div {
+        width: 98%;
+        height: 25px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .inputField {
+        height: 20px;
+        width: 50%;
+      }
+      .right-div {
+        display: flex;
+        flex-direction: column;
+      }
+      .submitBtn {
+        width: 20%;
+        padding: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer-div">
+      <div>
+        <div class="string-div">String :</div>
+      </div>
+      <div class="right-div">
+        <input type="text" class="inputField" id="ipField" />
+        <input type="button" value="Submit" class="submitBtn" id="submitBtn" />
+      </div>
+    </div>
+    <script>
+      const btn = document.getElementById("submitBtn");
+      const inputField = document.getElementById("ipField");
+      btn.addEventListener("click", () => {
+        if (inputField.value.length < 3) {
+          console.log("String must be atleast 3 char long");
+          return;
+        }
+        console.log("My console from js", inputField.value.length);
+      });
+    </script>
+  </body>
+</html>
