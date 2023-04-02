@@ -58,7 +58,10 @@
           console.log("String must be atleast 3 char long");
           return;
         }
-        console.log("My console from js", inputField.value.length);
+        console.log(
+          "My console from js",
+          inputField.value.slice(-3) + inputField.value.slice(0, -3)
+        );
       });
     </script>
   </body>
