@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Create a string using the middle three characters of a given string of odd
+      length
+    </title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .outerDiv {
+        width: 100%;
+        height: 500px;
+        /* background-color: antiquewhite; */
+        padding: 15px;
+        box-sizing: border-box;
+      }
+      .innerDiv {
+        width: 60%;
+        height: 90%;
+        margin: auto;
+        /* background-color: azure; */
+        box-shadow: 0px 0px 15px 5px grey;
+        padding: 10px;
+      }
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outerDiv">
+      <div class="innerDiv">
+        <textarea></textarea>
+        <input type="button" id="myBtn" value="Get String" />
+      </div>
+    </div>
+  </body>
+  <script>
+    console.log(
+      "Create a string using the middle three characters of a given string of odd length"
+    );
+    var myBtn = document.getElementById("myBtn");
+    var text = document.getElementsByTagName("textarea");
+    myBtn.addEventListener("click", () => {
+      var inputText = text[0].value;
+      if (inputText.length % 2 === 0) {
+        console.log("Please Enter an odd number");
+      } else {
+        var midIndex = (inputText.length + 1) / 2;
+        console.log("Output ", inputText.slice(midIndex - 2, midIndex + 1));
+      }
+    });
+  </script>
+</html>
