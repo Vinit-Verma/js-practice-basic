@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Concatenate two strings and return the result. If the length of the
+      strings does not match, then remove the characters from the longer string.
+    </title>
+    <style>
+      .outer-div {
+        width: 70%;
+        box-shadow: 0px 0px 5px 5px grey;
+        padding: 5px 15px;
+        margin: auto;
+      }
+      .inner-div {
+        display: flex;
+        justify-content: space-around;
+      }
+      .btn-div {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .btn-div > input[type="button"] {
+        cursor: pointer;
+        height: 30px;
+        width: 70px;
+        border-radius: 10px;
+        /* border: ; */
+      }
+      .btn-div > input[type="button"]:hover {
+        background-color: black;
+        color: antiquewhite;
+      }
+      .myH3 {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer-div">
+      <h2>
+        Concatenate two strings and return the result. If the length of the
+        strings does not match, then remove the characters from the longer
+        string.
+      </h2>
+      <div class="inner-div">
+        <div>
+          <label for="str1">String 1</label>
+          <input type="input" id="str1" />
+          <br /><br />
+          <label for="str2">String 2</label>
+          <input type="input" id="str2" />
+        </div>
+        <div>
+          <h3 class="myH3">Output string :</h3>
+          <input type="input" id="opt" disabled />
+        </div>
+      </div>
+      <div class="btn-div">
+        <input type="button" value="Concate" id="myButton" />
+      </div>
+    </div>
+    <script>
+      const inp1 = document.getElementById("str1");
+      const inp2 = document.getElementById("str2");
+      const myBtn = document.getElementById("myButton");
+      const output = document.getElementById("opt");
+      myBtn.addEventListener("click", () => {
+        const str1 = inp1.value;
+        const str2 = inp2.value;
+        console.log("input", { string1: str1, string2: str2 });
+        const str1Length = str1.length;
+        const str2Length = str2.length;
+        console.log("input", {
+          "string 1 length": str1Length,
+          "string 2 length": str2Length,
+        });
+        const smallestLength = Math.min(str1Length, str2Length);
+        console.log({ smallestLength });
+        output.value =
+          str1.substring(str1Length - smallestLength) +
+          str2.substring(str2Length - smallestLength);
+      });
+    </script>
+  </body>
+</html>
