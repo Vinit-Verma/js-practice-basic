@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new string from a given string, removing the first and last characters of the string if the first or last character are 'P'</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Create a new string from a given string, removing the first and last characters of the string if the first or last character are 'P'</h1>
+        <label for="inputField">Enter a string : </label>
+        <input type="text" id="inputField" />
+        <input type="button" value="Click Me" id="submitBtn" />
+        <div>
+            <label for="outputField">Output : </label>
+            <input type="text" id="outputField" disabled=true>
+        </div>
+    </div>
+    <script>
+
+        const newString = (oldString) => {
+            let startPoint = 0
+            let endPoint = oldString.length
+            console.log("Myn console 1", endPoint)
+
+            if(oldString.length > 0 && oldString.charAt(0).toLowerCase() === "p"){
+                startPoint = 1
+            }
+
+            if(oldString.length > 0 && oldString.charAt(endPoint - 1).toLowerCase() === "p"){
+                endPoint--
+            }
+        
+            return oldString.substring(startPoint, endPoint)
+
+        }
+
+        const btn = document.getElementById("submitBtn")
+        const output = document.getElementById("outputField")
+        btn.addEventListener("click",()=>{
+            const inputValue = document.getElementById("inputField").value
+            console.log(inputValue)
+            const result = newString(inputValue)
+            console.log(result)
+            output.value = result
+        })
+    </script>
+</body>
+</html>
