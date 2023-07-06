@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether 1 appears in first or last position of a given array of
+      integers
+    </title>
+  </head>
+  <body>
+    <h1>
+      Check whether 1 appears in first or last position of a given array of
+      integers
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      function checkArr(arr) {
+        if (arr[0] === 1 || arr[arr.length - 1] === 1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      let arr = [10, 20, 43, 1];
+      console.log("My console for arr", arr);
+      const result = checkArr(arr);
+      console.log("My console for result", result);
+    </script>
+  </body>
+</html>
