@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Rotate the elements left of a given array of integers of length 3
+    </title>
+  </head>
+  <body>
+    <h1>Rotate the elements left of a given array of integers of length 3</h1>
+    <h2>Check console for results</h2>
+
+    <script>
+      function moveLeft(arr) {
+        let ele = arr.shift(0);
+        console.log("My console for ele", ele, arr);
+        arr.push(ele);
+        return arr;
+      }
+
+      const myArr = [10, 20, 30];
+      const result = moveLeft(myArr);
+      console.log("My console for shifted arr ", result);
+    </script>
+  </body>
+</html>
