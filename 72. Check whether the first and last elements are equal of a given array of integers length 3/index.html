@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether the first and last elements are equal of a given array of
+      integers length 3
+    </title>
+  </head>
+  <body>
+    <h1>
+      Check whether the first and last elements are equal of a given array of
+      integers length 3
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const myArr = [10, 20, 10];
+      const myArr2 = [10, 20, 30];
+
+      const checkFunction = (arr) => {
+        return arr[0] === arr[myArr.length - 1];
+      };
+
+      const result = checkFunction(myArr);
+      console.log("Array", myArr);
+      console.log("First and last element of array are matching", result);
+
+      const result2 = checkFunction(myArr2);
+      console.log("Array", myArr2);
+      console.log("First and last element of array are matching", result2);
+    </script>
+  </body>
+</html>
