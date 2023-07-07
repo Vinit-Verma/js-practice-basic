@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Write a JavaScript program to reverse the elements of a given array of
+      integers of length 3.
+    </title>
+  </head>
+  <body>
+    <h1>
+      Write a JavaScript program to reverse the elements of a given array of
+      integers of length 3.
+    </h1>
+    <h2>Check console for result</h2>
+
+    <script>
+      function reverseArr(arr) {
+        return arr.map((ele, i, arr)=>arr[(arr.length -1) - i])
+      }
+      
+      const myArr = [10, 20, 30];
+      myArr.reverse()
+      console.log("reverse arr using reverse() ", myArr);
+
+      const myArr2 = [1, 2, 3];
+      const result = reverseArr(myArr2);
+      console.log("reverse arr using custom function", result);
+    </script>
+  </body>
+</html>
