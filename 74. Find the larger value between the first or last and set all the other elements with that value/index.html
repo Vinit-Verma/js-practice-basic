@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the larger value between the first or last and set all the other elements with that value</title>
+</head>
+<body>
+    <h1>Find the larger value between the first or last and set all the other elements with that value</h1>
+    <h2>Look console for results</h2>
+    <script>
+        const myArr = [20,30,40]
+        console.log("The given arr is ", myArr)
+        const firstElement = myArr[0]
+        const lastElement = myArr[myArr.length -1]
+        const largerValue = firstElement > lastElement ? firstElement : lastElement
+        const newArr = []
+        myArr.map((ele, i)=>{
+            return newArr[i] = largerValue
+        })
+        console.log("My console for result is", newArr)
+    </script>
+</body>
+</html>
