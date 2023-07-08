@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new array taking the first and last elements from a given array of integers and length must be greater or equal to 1</title>
+</head>
+<body>
+    <h1>Create a new array taking the first and last elements from a given array of integers and length must be greater or equal to 1</h1>
+    <h2>Check console for results</h2>
+    <script>
+
+        function createNewArr(arr){
+            let newArr = []
+            newArr.push(arr[0])
+            newArr.push(arr[arr.length -1])
+            return newArr
+        }
+
+        const myArr = [10,20,30,40]
+        const result = createNewArr(myArr)
+        console.log("My console for result ", result)
+    </script>
+</body>
+</html>
