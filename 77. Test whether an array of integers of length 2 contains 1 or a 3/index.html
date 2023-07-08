@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test whether an array of integers of length 2 contains 1 or a 3</title>
+</head>
+<body>
+    <h1>Test whether an array of integers of length 2 contains 1 or a 3</h1>
+    <h2>Check console for result</h2>
+    <script>
+        function checkArr(arr) {
+            console.log("My console to check arr", arr)
+            if(arr.indexOf(1) !== -1 || arr.indexOf(3) !== -1){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        console.log("For arr", checkArr([10,20]) )
+        console.log("For arr", checkArr([1,4]) )
+        console.log("For arr", checkArr([20,40]) )
+        console.log("For arr", checkArr([20,3]) )
+
+    </script>
+</body>
+</html>
