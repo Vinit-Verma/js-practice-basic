@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new array taking the middle elements of the two arrays of integer and each length 3</title>
+</head>
+<body>
+    <h1>Create a new array taking the middle elements of the two arrays of integer and each length 3</h1>
+    <h2>Check console for results</h2>
+    <script>
+        const findMiddleElement = (arr) =>{
+            const arrLength = arr.length
+            if(arrLength % 2 !== 0){
+                const middleElement = arr[(arrLength - 1)/2]
+                return middleElement
+            }else{
+                return false
+            }
+        }
+
+        const myArr1 = [10,20,30,40,50]
+        const myArr2 = [40,50,60,70,80]
+        const resultArr = [] 
+        console.log("Both arrays are", {myArr1, myArr2});
+        const middleEle1 = findMiddleElement(myArr1)
+        resultArr.push(middleEle1)
+        const middleEle2 = findMiddleElement(myArr2)
+        resultArr.push(middleEle2)
+        console.log("My console for middle element is", resultArr)
+    </script>
+</body>
+</html>
