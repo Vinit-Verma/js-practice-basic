@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap the first and last elements of a given array of integers</title>
+</head>
+<body>
+    <h1>Swap the first and last elements of a given array of integers</h1>
+    <h2>Check console for result</h2>
+    <script>
+        function swap(arra){
+            [arra[0], arra[arra.length - 1]] = [arra[arra.length - 1], arra[0]];
+            return arra
+        }
+
+        console.log([1,2,3,4,5],swap([1,2,3,4,5]))
+        console.log([1,2,3,4],swap([1,2,3,4]))
+        console.log([1,2,3],swap([1,2,3]))
+        console.log([1,2],swap([1,2]))
+    </script>
+</body>
+</html>
