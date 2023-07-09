@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add two positive integers without carry</title>
+</head>
+<body>
+    <h1>Add two positive integers without carry</h1>
+    <h2>Check console for results</h2>
+    <script>
+        function add_two_int_without_carrying(n1, n2) {
+            var result = 0,
+                x = 1;
+            while (n1 > 0 && n2 > 0) {
+                console.log("My console 1", {n1, n2})
+                result += x * ((n1 + n2) % 10);
+                console.log("My console 2", {n1, n2, result})
+                n1 = Math.floor(n1 / 10);
+                n2 = Math.floor(n2 / 10);
+                console.log("My console 3", {n1, n2, result})
+                x*= 10;
+                console.log("My console 4", {x})
+            }
+            return result;
+        }
+        console.log(add_two_int_without_carrying(222, 911))
+        console.log(add_two_int_without_carrying(200, 900))
+    </script>
+</body>
+</html>
