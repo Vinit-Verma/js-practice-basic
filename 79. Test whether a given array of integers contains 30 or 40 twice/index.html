@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test whether a given array of integers contains 30 or 40 twice</title>
+</head>
+<body>
+    <h1>Test whether a given array of integers contains 30 or 40 twice</h1>
+    <h2>Check console for results</h2>
+    <script>
+        function chktwice(arr){
+            console.log("Array is ", arr)
+            const firstEle = arr[0]
+            const secondEle = arr[1]
+            if((firstEle === 30 && secondEle === 30) || (firstEle === 40 && secondEle === 40)){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        console.log(chktwice([30,30]))
+        console.log(chktwice([20,30]))
+        console.log(chktwice([40,30]))
+        console.log(chktwice([40,40]))
+    </script>
+</body>
+</html>
