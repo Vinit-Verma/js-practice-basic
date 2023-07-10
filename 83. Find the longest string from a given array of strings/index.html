@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the longest string from a given array of strings</title>
+</head>
+<body>
+    <h1>Find the longest string from a given array of strings</h1>
+    <h2>Check console for results</h2>
+    <script>
+        const longestString = (arr) => {
+            console.log("Array is ", arr)
+            let max = arr[0].length
+            arr.map((ele)=>{
+                max = Math.max(max, ele.length)
+            })
+            const result = arr.filter(ele => ele.length == max)
+            return result
+        }
+
+        console.log("My console for arr result", longestString(["fds","gfdag","fgewgtgf","fsd"]))
+        console.log("My console for arr result", longestString(["dhauij","fwes","kjyunthbgfhtyr","dqfg"]))
+
+    </script>
+</body>
+</html>
