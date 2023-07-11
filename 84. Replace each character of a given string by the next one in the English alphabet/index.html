@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Replace each character of a given string by the next one in the English
+      alphabet
+    </title>
+  </head>
+  <body>
+    <h1>
+      Replace each character of a given string by the next one in the English
+      alphabet
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const getNextChar = (str) => {
+        console.log("My console for given string", str);
+        const splitStr = str.split("");
+        splitStr.forEach((element, index) => {
+          let x = element.charCodeAt() - "a".charCodeAt();
+          x = (x + 1) % 26;
+          splitStr[index] = String.fromCharCode(x + "a".charCodeAt());
+        });
+        return splitStr.join("");
+      };
+      console.log("My console for result", getNextChar("abcdef"));
+      console.log("My console for result", getNextChar("tuvxyz"));
+    </script>
+  </body>
+</html>
