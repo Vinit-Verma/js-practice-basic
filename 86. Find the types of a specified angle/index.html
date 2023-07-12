@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the types of a specified angle</title>
+  </head>
+  <body>
+    <h1>Find the types of a specified angle</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const angleNames = [
+        "Acute angle",
+        "Right angle",
+        "Obtuse angle",
+        "Straight angle",
+      ];
+      function findAngleType(angle) {
+        console.log("My console for given angle is", angle);
+        if (angle < 90) {
+          return angleNames[0];
+        }
+        if (angle === 90) {
+          return angleNames[1];
+        }
+        if (angle < 180) {
+          return angleNames[2];
+        }
+        return angleNames[3];
+      }
+      console.log("My console for ", findAngleType(32));
+      console.log("My console for ", findAngleType(90));
+      console.log("My console for ", findAngleType(102));
+      console.log("My console for ", findAngleType(180));
+    </script>
+  </body>
+</html>
