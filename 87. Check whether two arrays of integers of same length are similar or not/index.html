@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether two arrays of integers of same length are similar or not
+    </title>
+  </head>
+  <body>
+    <h1>
+      Check whether two arrays of integers of same length are similar or not
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      function checkIfSimilarArr(arr1, arr2) {
+        console.log("My console for given arrays are", { arr1, arr2 });
+        for (let i = 0; i < arr1.length; i++) {
+          for (let j = 1; j < arr1.length; j++) {
+            let result = true;
+            // console.log("My console at top ", arr1);
+            const temp = arr1[i];
+            arr1[i] = arr1[j];
+            arr1[j] = temp;
+            // console.log("Two arrays before comparing", { arr1, arr2 });
+            // console.log("Two arrays before comparing", arr1);
+            for (let k = 0; k < arr1.length; k++) {
+              if (arr1[k] !== arr2[k]) {
+                result = false;
+                // console.log("My coonsole for result", result);
+                break;
+              }
+            }
+            if (result) {
+              return true;
+            }
+            // console.log("My console to revert back arr", arr1);
+            arr1[j] = arr1[i];
+            arr1[i] = temp;
+            // console.log("My console after revert back arr", arr1);
+          }
+        }
+        return false;
+      }
+
+      console.log(
+        "My console for check if 2 arrays are similar",
+        checkIfSimilarArr([10, 20, 30], [10, 20, 30])
+      );
+      console.log(
+        "My console for check if 2 arrays are similar",
+        checkIfSimilarArr([11, 12, 13], [10, 20, 30])
+      );
+    </script>
+  </body>
+</html>
