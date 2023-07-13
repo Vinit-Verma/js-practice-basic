@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check whether two given integers are similar or not</title>
+  </head>
+  <body>
+    <h1>Check whether two given integers are similar or not</h1>
+    <h2>Check console for results</h2>
+    <script>
+      function checkInteger(num1, num2, divisor) {
+        console.log("My console for input", {
+          number1: num1,
+          numer2: num2,
+          divisor,
+        });
+
+        if (
+          (num1 % divisor === 0 && num2 % divisor === 0) ||
+          (num1 % divisor !== 0 && num2 % divisor !== 0)
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log("My console for result", checkInteger(10, 20, 5));
+      console.log("My console for result", checkInteger(10, 20, 4));
+    </script>
+  </body>
+</html>
