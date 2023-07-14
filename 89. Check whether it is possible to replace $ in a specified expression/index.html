@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether it is possible to replace $ in a specified expression
+    </title>
+  </head>
+  <body>
+    <h1>Check whether it is possible to replace $ in a specified expression</h1>
+    <h2>Check console for results</h2>
+    <script>
+      function lookForOperator(x, y, result) {
+        console.log("My console for given params", { x, y, result });
+        if (
+          x + y === result ||
+          x - y === result ||
+          x * y === result ||
+          x / y === result
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log("My console for result", lookForOperator(10, 25, 35));
+      console.log("My console for result", lookForOperator(10, 25, 250));
+      console.log("My console for result", lookForOperator(30, 25, 5));
+      console.log("My console for result", lookForOperator(100, 25, 4));
+      console.log("My console for result", lookForOperator(100, 25, 25));
+    </script>
+  </body>
+</html>
