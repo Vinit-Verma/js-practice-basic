@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the kth greatest element of a given array of integers</title>
+  </head>
+  <body>
+    <h1>Find the kth greatest element of a given array of integers</h1>
+    <h2>Check console for results</h2>
+    <script>
+      function kthGreatestEle(arr, k) {
+        console.log("My console for input to funciton", { arr, k });
+        for (let j = 0; j < k; j++) {
+          var max_index = j;
+          let temp = arr[j];
+
+          console.log("My console at place 1 ", { max_index, temp });
+
+          for (let i = j + 1; i < arr.length; i++) {
+            if (arr[i] > arr[max_index]) {
+              max_index = i;
+            }
+          }
+
+          arr[j] = arr[max_index];
+          arr[max_index] = temp;
+        }
+        return arr[k - 1];
+      }
+
+      console.log(
+        "My console for result",
+        kthGreatestEle([1, 2, 3, 4, 5, 6, 7, 8, 9], 4)
+      );
+    </script>
+  </body>
+</html>
