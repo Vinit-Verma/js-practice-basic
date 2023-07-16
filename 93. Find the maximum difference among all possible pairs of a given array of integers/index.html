@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the maximum difference among all possible pairs of a given array of
+      integers
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the maximum difference among all possible pairs of a given array of
+      integers
+    </h1>
+    <h2>Check console for result</h2>
+    <script>
+      const findDiff = (arr) => {
+        console.log("Input array ", arr);
+        let result = -1;
+
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length - 1; j++) {
+            const temp = Math.abs(arr[i] - arr[j]);
+            result = Math.max(temp, result);
+          }
+        }
+
+        return result;
+      };
+
+      console.log("Result ", findDiff([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+      console.log("Result ", findDiff([1, 12, 3, 44, 5, 6, 7, 8, 9]));
+      console.log("Result ", findDiff([1, 2, 35, 4, 5, 6, 7, 8, 9]));
+    </script>
+  </body>
+</html>
