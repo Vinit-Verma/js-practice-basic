@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the maximum possible sum of some of its k consecutive numbers of a
+      specified array of positive integers
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the maximum possible sum of some of its k consecutive numbers of a
+      specified array of positive integers
+    </h1>
+    <h2>Check console for result</h2>
+    <script>
+      function addConsecutiveNumber(arr, k) {
+        console.log("My console for input arr ", arr);
+        let result = 0;
+        let tempSum = 0;
+        for (let i = 0; i < k - 1; i++) {
+          tempSum += arr[i];
+          console.log("My conosle for tempSum", tempSum);
+        }
+        for (let i = k - 1; i < arr.length; i++) {
+          tempSum += arr[i];
+          console.log("My console for step 1", { tempSum, result });
+          if (tempSum > result) {
+            console.log("My console for step 2", { tempSum, result });
+            result = tempSum;
+          }
+          console.log("My console for step 3", tempSum);
+          console.log("My console for step 3.5", i - k + 1, i, k);
+          tempSum -= arr[i - k + 1];
+          console.log("My console for step 4", tempSum);
+        }
+        return result;
+      }
+
+      console.log(
+        "My console for result",
+        addConsecutiveNumber([1, 2, 3, 14, 5], 2)
+      );
+    </script>
+  </body>
+</html>
