@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the maximum difference between any two adjacent elements of a given
+      array of integers
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the maximum difference between any two adjacent elements of a given
+      array of integers
+    </h1>
+    <h2>Check console for result</h2>
+    <script>
+      const maxDiff = (arr) => {
+        console.log("Input arr is", arr);
+        let result = -1;
+        let temp;
+
+        for (let i = 0; i < arr.length - 1; i++) {
+          temp = Math.abs(arr[i] - arr[i + 1]);
+          result = Math.max(result, temp);
+        }
+        return result;
+      };
+
+      console.log("result ", maxDiff([1, 3, 4, 5, 4, 3, 6]));
+      console.log("result ", maxDiff([1, 5, 8, 1, 3]));
+      console.log("result ", maxDiff([1, 13, 45, 3, 47]));
+    </script>
+  </body>
+</html>
