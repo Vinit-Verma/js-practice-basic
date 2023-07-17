@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Replace all the numbers with a specified number of a given array of
+      integers
+    </title>
+  </head>
+  <body>
+    <h1>
+      Replace all the numbers with a specified number of a given array of
+      integers
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const replaceNumberInArr = (arr, oldValue, newValue) => {
+        console.log("input ", { arr, oldValue, newValue });
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === oldValue) {
+            arr[i] = newValue;
+          }
+        }
+        return arr;
+      };
+
+      console.log(
+        "result",
+        replaceNumberInArr([1, 2, 3, 3, 4, 5, 3, 3, 6, 3, 7, 3], 3, 5)
+      );
+    </script>
+  </body>
+</html>
