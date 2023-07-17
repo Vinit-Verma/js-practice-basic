@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Compute the sum of absolute differences of consecutive numbers of a given
+      array of integer
+    </title>
+  </head>
+  <body>
+    <h1>
+      Compute the sum of absolute differences of consecutive numbers of a given
+      array of integers
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const sumOfAbsoluteDiff = (arr) => {
+        console.log("input arr", arr);
+        let sum = 0;
+        for (let i = 0; i < arr.length - 1; i++) {
+          const diff = Math.abs(arr[i] - arr[i + 1]);
+          sum += diff;
+        }
+        return sum;
+      };
+      console.log("result", sumOfAbsoluteDiff([1, 2, 3, 4, 5]));
+      console.log("result", sumOfAbsoluteDiff([1, 2, 3, 2, -5]));
+    </script>
+  </body>
+</html>
