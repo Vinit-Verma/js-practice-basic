@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the shortest possible string which can create a string to make it a
+      palindrome by adding characters to the end of it
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the shortest possible string which can create a string to make it a
+      palindrome by adding characters to the end of it
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const palindrome = (str) => {
+        console.log("Input strting", str);
+        let flag;
+        for (let i = 0; i < str.length; i++) {
+          flag = true;
+          for (let j = 0; j < i - j - 1; j++) {
+            if (i - j - 1 < str.length && str[j] != str[i - j - 1]) {
+              flag = false;
+              break;
+            }
+          }
+          if (flag) {
+            for (let j = str.length; j < i; j++) {
+              str += str[i - j - 1];
+            }
+            return str;
+          }
+        }
+      };
+
+      console.log("Result ", palindrome("abcddc"));
+      console.log("Result ", palindrome("122"));
+    </script>
+  </body>
+</html>
