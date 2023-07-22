@@ -15,28 +15,44 @@
     </h1>
     <h2>Check console for results</h2>
     <script>
-      const palindrome = (str) => {
-        console.log("Input strting", str);
+      function build_Palindrome(new_str) {
         let flag;
-        for (let i = 0; i < str.length; i++) {
+        for (let i = new_str.length; ; i++) {
+          console.log("My console 1 ", { new_str, i });
           flag = true;
-          for (let j = 0; j < i - j - 1; j++) {
-            if (i - j - 1 < str.length && str[j] != str[i - j - 1]) {
+          for (var j = 0; j < i - j - 1; j++) {
+            console.log("My console 2 ", { i, j });
+            console.log("My console 3 ", {
+              stringLength: new_str.length,
+              first: new_str[j],
+              second: new_str[i - j - 1],
+            });
+            if (
+              i - j - 1 < new_str.length &&
+              new_str[j] != new_str[i - j - 1]
+            ) {
+              console.log("My console 3.5 ", {
+                stringLength: new_str.length,
+                first: new_str[j],
+                second: new_str[i - j - 1],
+              });
               flag = false;
               break;
             }
           }
           if (flag) {
-            for (let j = str.length; j < i; j++) {
-              str += str[i - j - 1];
+            for (var j = new_str.length; j < i; j++) {
+              console.log("My console 4 ", new_str);
+              new_str += new_str[i - j - 1];
+              console.log("My console 5 ", new_str);
             }
-            return str;
+            return new_str;
           }
         }
-      };
+      }
 
-      console.log("Result ", palindrome("abcddc"));
-      console.log("Result ", palindrome("122"));
+      console.log(build_Palindrome("abcddc"));
+      console.log(build_Palindrome("122"));
     </script>
   </body>
 </html>
