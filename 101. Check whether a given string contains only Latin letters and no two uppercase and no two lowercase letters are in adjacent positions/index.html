@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether a given string contains only Latin letters and no two
+      uppercase and no two lowercase letters are in adjacent positions
+    </title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="my-class">fds</div>
+    <script>
+      const checkString = (str) => {
+        console.log("Input string", str);
+
+        const isLowerCase = (character) => {
+          if ("a" <= character && character <= "z") {
+            return true;
+          }
+          return false;
+        };
+
+        const isUpperCase = (character) => {
+          if ("A" <= character && character <= "Z") {
+            return true;
+          }
+          return false;
+        };
+
+        const isFirstCharLower = isLowerCase(str[0]);
+        const isFirstCharUpper = isUpperCase(str[0]);
+
+        console.log("First char", { isFirstCharLower, isFirstCharUpper });
+
+        if (!(isFirstCharLower || isFirstCharUpper)) {
+          return false;
+        }
+
+        for (let i = 0; i < str.length; i++) {
+          if (i % 2) {
+            if (
+              isUpperCase(str[i]) === isFirstCharUpper ||
+              isLowerCase(str[i]) === isFirstCharLower
+            ) {
+              return false;
+            }
+          } else {
+            if (
+              isUpperCase(str[i]) !== isFirstCharUpper ||
+              isLowerCase(str[i]) !== isFirstCharLower
+            ) {
+              return false;
+            }
+          }
+        }
+
+        return true;
+      };
+
+      console.log("My Console for function result ", checkString("abC"));
+      console.log("My Console for function result ", checkString("aBc"));
+    </script>
+  </body>
+</html>
