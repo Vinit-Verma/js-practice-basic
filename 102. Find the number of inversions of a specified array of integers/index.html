@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the number of inversions of a specified array of integers
+    </title>
+  </head>
+  <body>
+    <h1>Find the number of inversions of a specified array of integers</h1>
+    <h2>Check console for results</h2>
+    <script>
+      function numberOfPossibleInversions(arr) {
+        console.log("My console for input array", arr);
+        let counter = 0;
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+              counter++;
+            }
+          }
+        }
+        return counter;
+      }
+
+      let majorArray = [
+        [1, 2, 3, 4],
+        [0, 3, 2, 5, 9],
+        [1, 5, 4, 3],
+        [10, 30, 20, -10],
+      ];
+
+      majorArray.forEach((item) => {
+        console.log("My console for results", numberOfPossibleInversions(item));
+      });
+    </script>
+  </body>
+</html>
