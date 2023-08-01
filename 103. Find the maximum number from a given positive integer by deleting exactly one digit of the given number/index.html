@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the maximum number from a given positive integer by deleting exactly
+      one digit of the given number
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the maximum number from a given positive integer by deleting exactly
+      one digit of the given number
+    </h1>
+    <h2>Check console fo results</h2>
+    <script>
+      const findMaxNumber = (num) => {
+        console.log("input number is", num);
+        let maxNum = 0;
+        const digits = [];
+
+        while (num) {
+          digits.push(num % 10);
+          num = Math.floor(num / 10);
+        }
+
+        for (let index = 0; index < digits.length; index++) {
+          let n = 0;
+          for (let i = digits.length - 1; i >= 0; i--) {
+            // console.log("indexes", { i, index });
+            if (i !== index) {
+              n = n * 10 + digits[i];
+              //   console.log("indexes 2", n);
+            }
+            maxNum = Math.max(n, maxNum);
+          }
+        }
+
+        return maxNum;
+      };
+      console.log("Max number is", findMaxNumber(1123));
+      console.log("Max number is", findMaxNumber(130));
+      console.log("Max number is", findMaxNumber(387));
+    </script>
+  </body>
+</html>
