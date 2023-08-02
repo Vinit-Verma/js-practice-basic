@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find two elements of the array such that their absolute difference is not
+      greater than a given integer but is as close to the said integer
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find two elements of the array such that their absolute difference is not
+      greater than a given integer but is as close to the said integer
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const findElementsOfArr = (arr, n) => {
+        console.log("input arr and number is", { arr, n });
+        let max_val = -1;
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length; j++) {
+            const diff = Math.abs(arr[i] - arr[j]);
+            if (diff <= n) {
+              max_val = Math.max(max_val, diff);
+            }
+          }
+        }
+        return max_val;
+      };
+
+      console.log("Difference", findElementsOfArr([12, 10, 33, 34], 10));
+      console.log("Difference", findElementsOfArr([12, 10, 33, 34], 24));
+      console.log("Difference", findElementsOfArr([12, 10, 33, 44], 40));
+    </script>
+  </body>
+</html>
