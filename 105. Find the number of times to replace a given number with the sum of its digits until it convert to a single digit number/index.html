@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the number of times to replace a given number with the sum of its
+      digits until it convert to a single digit number
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the number of times to replace a given number with the sum of its
+      digits until it convert to a single digit number
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const destructureNumber = (number) => {
+        const sum = 0;
+        const allDigits = [];
+        while (number) {
+          const mod = number % 10;
+          allDigits.push(mod);
+          number = Math.floor(number / 10);
+        }
+        return allDigits;
+      };
+
+      const addArrElement = (arr) => {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      };
+
+      const addAllDigitsToOne = (num) => {
+        while (num >= 10) {
+          console.log("Input number", num);
+          const digits = destructureNumber(num);
+          console.log("digits", digits);
+          num = addArrElement(digits);
+          console.log("sum", num);
+        }
+      };
+
+      console.log("My console for result", addAllDigitsToOne(159));
+    </script>
+  </body>
+</html>
