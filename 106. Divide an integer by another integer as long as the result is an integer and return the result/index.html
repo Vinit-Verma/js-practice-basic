@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Divide an integer by another integer as long as the result is an integer
+      and return the result
+    </title>
+  </head>
+  <body>
+    <h1>
+      Divide an integer by another integer as long as the result is an integer
+      and return the result
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const divideInt = (divident, divisor) => {
+        console.log("Input", { divident, divisor });
+
+        if (divisor === 1) return divident;
+
+        while (divident % divisor === 0) {
+          divident = divident / divisor;
+        }
+        return divident;
+      };
+      console.log("Result is", divideInt(123, 2));
+      console.log("Result is", divideInt(10324, 2));
+      console.log("Result is", divideInt(100, 2));
+    </script>
+  </body>
+</html>
