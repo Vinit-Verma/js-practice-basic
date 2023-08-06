@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create the dot products of two given 3D vectors</title>
+  </head>
+  <body>
+    <h1>Create the dot products of two given 3D vectors</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const createDotProduct = (vector1, vector2) => {
+        console.log("input vectors", { vector1, vector2 });
+        let result = 0;
+        for (let i = 0; i < 3; i++) {
+          result += vector1[i] * vector2[i];
+        }
+        return result;
+      };
+
+      console.log("Result", createDotProduct([1, 2, 3], [1, 2, 3]));
+      console.log("Result", createDotProduct([2, 4, 6], [2, 4, 6]));
+      console.log("Result", createDotProduct([1, 1, 1], [0, 1, -1]));
+    </script>
+  </body>
+</html>
