@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Sort an array of all prime numbers between 1 and a given integer
+    </title>
+  </head>
+  <body>
+    <h1>Sort an array of all prime numbers between 1 and a given integer</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const sortPrimeNumbers = (num) => {
+        const prime_num1 = [];
+        const prime_num2 = [];
+        for (var i = 0; i <= num; i++) {
+          prime_num2.push(true);
+        }
+        for (var i = 2; i <= num; i++) {
+          if (prime_num2[i]) {
+            prime_num1.push(i);
+            for (let j = 1; i * j <= num; j++) {
+              prime_num2[i * j] = false;
+            }
+          }
+        }
+        return prime_num1;
+      };
+
+      console.log("Prime numbers are", sortPrimeNumbers(5));
+      console.log("Prime numbers are", sortPrimeNumbers(10));
+      console.log("Prime numbers are", sortPrimeNumbers(15));
+      console.log("Prime numbers are", sortPrimeNumbers(20));
+    </script>
+  </body>
+</html>
