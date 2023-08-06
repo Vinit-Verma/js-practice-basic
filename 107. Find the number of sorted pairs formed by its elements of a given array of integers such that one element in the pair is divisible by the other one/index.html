@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the number of sorted pairs formed by its elements of a given array of
+      integers such that one element in the pair is divisible by the other one
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the number of sorted pairs formed by its elements of a given array of
+      integers such that one element in the pair is divisible by the other one
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const sortPairs = (arr) => {
+        console.log("Input", arr);
+        let temp = [];
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (i !== j) {
+              const ele = `(${arr[i]}, ${arr[j]})`;
+              if (arr[j] % arr[i] === 0) {
+                temp.push(ele);
+              }
+            }
+          }
+        }
+        // console.log("temp arr", temp);
+        return { numberOfCombos: temp.length, allCombos: temp };
+      };
+
+      console.log("results", sortPairs([1, 2, 3, 4]));
+      console.log("results", sortPairs([1, 2, 3]));
+      console.log("results", sortPairs([2, 4, 6]));
+      console.log("results", sortPairs([2, 4, 16]));
+    </script>
+  </body>
+</html>
