@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the number of trailing zeros in the decimal representation of the
+      factorial of a given number
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find the number of trailing zeros in the decimal representation of the
+      factorial of a given number
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const numberOfTrailingZeros = (x) => {
+        console.log("input", x);
+        factorial = 1;
+        numberOfZeros = 0;
+        for (let i = x; i > 0; i--) {
+          factorial *= i;
+        }
+        console.log("factorial", factorial);
+        while (factorial % 5 === 0) {
+          factorial /= 5;
+          numberOfZeros++;
+        }
+        return numberOfZeros;
+      };
+      console.log("Number of zeros", numberOfTrailingZeros(8));
+      console.log("Number of zeros", numberOfTrailingZeros(9));
+      console.log("Number of zeros", numberOfTrailingZeros(10));
+      console.log("Number of zeros", numberOfTrailingZeros(11));
+      console.log("Number of zeros", numberOfTrailingZeros(12));
+    </script>
+  </body>
+</html>
