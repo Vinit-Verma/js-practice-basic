@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether a given string represents a correct sentence or not
+    </title>
+  </head>
+  <body>
+    <h1>Check whether a given string represents a correct sentence or not</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const correctSentence = (s) => {
+        console.log("given sentence", s);
+        const firstChar = s[0];
+        const lastChar = s[s.length - 1];
+        return /[A-Z]/.test(firstChar) && lastChar === ".";
+      };
+      console.log(
+        "Is correct sentence",
+        correctSentence(
+          "This tool will help you write better English and efficiently corrects texts."
+        )
+      );
+    </script>
+  </body>
+</html>

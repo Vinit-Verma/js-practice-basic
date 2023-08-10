@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate the sum of n + n2 + n4 + n8 + ....</title>
+  </head>
+  <body>
+    <h1>Calculate the sum of n + n2 + n4 + n8 + ....</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const calSum = (n) => {
+        console.log("input number", n);
+        let sum = 0;
+        while (n > 0) {
+          sum += n;
+          n = Math.floor(n / 2);
+        }
+        return sum;
+      };
+      console.log("Sum is", calSum(8));
+      console.log("Sum is", calSum(9));
+      console.log("Sum is", calSum(26));
+    </script>
+  </body>
+</html>
