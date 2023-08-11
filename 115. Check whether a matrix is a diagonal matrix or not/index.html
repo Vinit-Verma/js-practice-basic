@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check whether a matrix is a diagonal matrix or not</title>
+  </head>
+  <body>
+    <h1>Check whether a matrix is a diagonal matrix or not</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const checkIfDiagonalMatrix = (arr) => {
+        console.log("input array", arr);
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length; j++) {
+            if (i !== j && arr[i][j] !== 0) {
+              return false;
+            }
+          }
+        }
+        return true;
+      };
+
+      const arr1 = [
+        [1, 0, 0],
+        [0, 2, 0],
+        [0, 0, 3],
+      ];
+
+      const arr2 = [
+        [1, 0, 0],
+        [0, 2, 3],
+        [0, 0, 3],
+      ];
+
+      console.log("result", checkIfDiagonalMatrix(arr1));
+      console.log("result", checkIfDiagonalMatrix(arr2));
+    </script>
+  </body>
+</html>
