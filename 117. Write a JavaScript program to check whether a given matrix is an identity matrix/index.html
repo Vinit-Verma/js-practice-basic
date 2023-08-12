@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Write a JavaScript program to check whether a given matrix is an identity
+      matrix.
+    </title>
+  </head>
+  <body>
+    <h1>
+      Write a JavaScript program to check whether a given matrix is an identity
+      matrix.
+    </h1>
+    <h2>Check console for results</h2>
+    <script>
+      const checkIfIdentityMatrix = (arr) => {
+        console.log("input arr", arr);
+
+        for (let i = 0; i < arr.length; i++) {
+          const numberOfRows = arr.length;
+          const numberOfCols = arr[i].length;
+          if (numberOfCols !== numberOfRows) {
+            console.log("Matrix must be a square matrix");
+          }
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = 0; j < arr.length; j++) {
+            if ((i !== j && arr[i][j] !== 0) || (i === j && arr[i][j] !== 1)) {
+              return false;
+            }
+          }
+        }
+        return true;
+      };
+      const arr1 = [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+      ];
+      const arr2 = [
+        [1, 0, 0],
+        [0, 1, 1],
+        [0, 0, 1],
+      ];
+      const arr3 = [
+        [1, 0, 0],
+        [0, 1, 1],
+        [0, 0, 1],
+      ];
+      console.log("result", checkIfIdentityMatrix(arr1));
+      console.log("result", checkIfIdentityMatrix(arr2));
+      console.log("result", checkIfIdentityMatrix(arr2));
+    </script>
+  </body>
+</html>
