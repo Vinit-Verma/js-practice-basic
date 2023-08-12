@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check whether a given number is in a given range</title>
+  </head>
+  <body>
+    <h1>Check whether a given number is in a given range</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const isInRange = (a, b, c) => {
+        console.log("input", { a, b, c });
+        return a <= b && b <= c;
+      };
+      console.log("result", isInRange(1, 2, 3));
+      console.log("result", isInRange(1, 1, 3));
+      console.log("result", isInRange(1, 18, 9));
+    </script>
+  </body>
+</html>
