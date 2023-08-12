@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Write a JavaScript program to find all the possible options to replace the
+      hash in a string (Consists of digits and one hash (#)) with a digit to
+      produce an integer divisible by 3.
+    </title>
+  </head>
+  <body>
+    <h1>
+      Write a JavaScript program to find all the possible options to replace the
+      hash in a string (Consists of digits and one hash (#)) with a digit to
+      produce an integer divisible by 3.
+    </h1>
+    <h2>Check console for result</h2>
+    <script>
+      const allPossibleCombos = (str) => {
+        console.log("input string", str);
+        splitStr = str.split("");
+        let resultArr = [];
+        for (let i = 0; i < 10; i++) {
+          const generateNumber = splitStr[0] + i + splitStr[2];
+          console.log("generateNumber", generateNumber);
+          if (generateNumber % 3 === 0) {
+            resultArr.push(generateNumber);
+          }
+        }
+        return resultArr;
+      };
+      console.log("result", allPossibleCombos("2*0"));
+    </script>
+  </body>
+</html>
