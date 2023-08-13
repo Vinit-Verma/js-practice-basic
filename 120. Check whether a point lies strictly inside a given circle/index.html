@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check whether a point lies strictly inside a given circle</title>
+  </head>
+  <body>
+    <h1>Check whether a point lies strictly inside a given circle</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const checkIfPointIsInCircle = (
+        circleCenter,
+        circleRadius,
+        givenPoint
+      ) => {
+        console.log("input", { circleCenter, circleRadius, givenPoint });
+        const distancePoint =
+          ((circleCenter[0] - givenPoint[0]) * (circleCenter[0] - givenPoint[0])) +
+          ((circleCenter[1] - givenPoint[1]) * (circleCenter[1] - givenPoint[1]));
+        const radSqr = circleRadius * circleRadius;
+        console.log({ distancePoint, radSqr });
+        if(distancePoint < radSqr){
+          return true
+        }
+        return false
+      };
+      console.log("result", checkIfPointIsInCircle([0, 0], 6, [2, 4]));
+      console.log("result", checkIfPointIsInCircle([0, 0], 6, [6, 8]));
+    </script>
+  </body>
+</html>
