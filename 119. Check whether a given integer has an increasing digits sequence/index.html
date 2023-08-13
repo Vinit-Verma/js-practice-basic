@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether a given integer has an increasing digits sequence
+    </title>
+  </head>
+  <body>
+    <h1>Check whether a given integer has an increasing digits sequence</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const isSequence = (n) => {
+        console.log("input", n);
+        const numArr = [];
+        while (n > 0) {
+          const singleDigit = n % 10;
+          numArr.push(singleDigit);
+          n = Math.floor(n / 10);
+        }
+        numArr.reverse();
+        console.log({ numArr });
+        for (let i = 0; i < numArr.length - 1; i++) {
+          if (numArr[i] >= numArr[i + 1]) {
+            return false;
+          }
+        }
+        return true;
+      };
+      console.log("result", isSequence(1234));
+      console.log("result", isSequence(1224));
+      console.log("result", isSequence(4321));
+    </script>
+  </body>
+</html>
