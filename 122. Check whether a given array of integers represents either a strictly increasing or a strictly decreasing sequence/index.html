@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Check whether a given array of integers represents either a strictly
+      increasing or a strictly decreasing sequence
+    </title>
+  </head>
+  <body>
+    <h1>
+      Check whether a given array of integers represents either a strictly
+      increasing or a strictly decreasing sequence
+    </h1>
+    <h2>Check console for results.</h2>
+    <script>
+      const isMonotonous = (arr) => {
+        console.log("input", arr);
+        if (arr.length === 1) return true;
+        const direction = arr[1] - arr[0];
+        for (let i = 0; i < arr.length - 1; i++) {
+          if (direction * (arr[i + 1] - arr[i]) <= 0) return false;
+        }
+        return true;
+      };
+
+      const arr1 = [1, 2, 3];
+      const arr2 = [1, 2, 2];
+      const arr3 = [-3, -2, -1];
+      console.log("result", isMonotonous([0]));
+      console.log("result", isMonotonous(arr1));
+      console.log("result", isMonotonous(arr2));
+      console.log("result", isMonotonous(arr3));
+    </script>
+  </body>
+</html>
