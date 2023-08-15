@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create the value of NOR of two given booleans</title>
+  </head>
+  <body>
+    <h1>Create the value of NOR of two given booleans</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const getNORValue = (a, b) => {
+        console.log("input", { a, b });
+        return !a && !b;
+      };
+      console.log("result", getNORValue(true, true));
+      console.log("result", getNORValue(true, false));
+      console.log("result", getNORValue(false, true));
+      console.log("result", getNORValue(false, false));
+    </script>
+  </body>
+</html>
