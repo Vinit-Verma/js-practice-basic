@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find whether the members of a given array of integers is a permutation of
+      numbers from 1 to a given integer
+    </title>
+  </head>
+  <body>
+    <h1>
+      Find whether the members of a given array of integers is a permutation of
+      numbers from 1 to a given integer
+    </h1>
+    <h2>Check conslole for results.</h2>
+    <script>
+      const isPermutation = (arr, num) => {
+        console.log("input", { arr, num });
+        for (let i = 0; i < num; i++) {
+          if (!arr.includes(i + 1)) return false;
+        }
+        return true;
+      };
+
+      const arr1 = [1, 2, 3, 4, 5];
+      const arr2 = [1, 2, 4, 5];
+
+      console.log("result", isPermutation(arr1, 5));
+      console.log("result", isPermutation(arr2, 5));
+    </script>
+  </body>
+</html>
