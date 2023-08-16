@@ -9,15 +9,27 @@
     <h1>Get the largest even number from an array of integers</h1>
     <h2>Check console for results</h2>
     <script>
+      /* One way */
+      //   const findLargestEvenNumber = (arr) => {
+      //     console.log("Input", arr);
+      //     let largestInt = 0;
+      //     for (let i = 0; i < arr.length; i++) {
+      //       if (arr[i] % 2 === 0) {
+      //         largestInt = Math.max(largestInt, arr[i]);
+      //       }
+      //     }
+      //     return largestInt;
+      //   };
+
+      /* Another way */
       const findLargestEvenNumber = (arr) => {
-        console.log("Input", arr);
-        let largestInt = 0;
+        console.log("input array", arr);
+        arr.sort((x, y) => y - x);
+        console.log("sorted array", arr);
+
         for (let i = 0; i < arr.length; i++) {
-          if (arr[i] % 2 === 0) {
-            largestInt = Math.max(largestInt, arr[i]);
-          }
+          if (arr[i] % 2 === 0) return arr[i];
         }
-        return largestInt;
       };
 
       const arr1 = [20, 40, 200];
