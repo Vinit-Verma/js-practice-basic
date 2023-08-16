@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get the largest even number from an array of integers</title>
+  </head>
+  <body>
+    <h1>Get the largest even number from an array of integers</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const findLargestEvenNumber = (arr) => {
+        console.log("Input", arr);
+        let largestInt = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 === 0) {
+            largestInt = Math.max(largestInt, arr[i]);
+          }
+        }
+        return largestInt;
+      };
+
+      const arr1 = [20, 40, 200];
+      const arr2 = [20, 40, 200, 300];
+      console.log("result", findLargestEvenNumber(arr1));
+      console.log("result", findLargestEvenNumber(arr2));
+    </script>
+  </body>
+</html>
