@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Reverse the order of the bits in a given integer.</h1>
+    <h2>Check console for results.</h2>
+    <script>
+      const reverseOrder = (n) => {
+        console.log("Input", n);
+        // let binaryString = n.toString(2).split("");
+        let binaryString = n.toString(2).split("");
+        let stringLength = binaryString.length;
+        for (let i = 0; i < 8 - stringLength; i++) {
+          binaryString.unshift("0");
+        }
+        return parseInt(binaryString.reverse().join(""), 2);
+      };
+      console.log("result", reverseOrder(14));
+      console.log("result", reverseOrder(56));
+      console.log("result", reverseOrder(234));
+    </script>
+  </body>
+</html>
