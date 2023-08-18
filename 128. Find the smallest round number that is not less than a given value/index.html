@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the smallest round number that is not less than a given value
+    </title>
+  </head>
+  <body>
+    <h1>Find the smallest round number that is not less than a given value</h1>
+    <h2>Check console for result.</h2>
+    <script>
+      const findsmallestRoundNumber = (x) => {
+        while (x % 10) {
+          x++;
+        }
+        return x;
+      };
+      console.log("results", findsmallestRoundNumber(56));
+    </script>
+  </body>
+</html>
