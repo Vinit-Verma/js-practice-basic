@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Find the smallest prime number strictly greater than a given number
+    </title>
+  </head>
+  <body>
+    <h1>Find the smallest prime number strictly greater than a given number</h1>
+    <h2>Check console for results.</h2>
+    <script>
+      const smallestPrimeNumber = (n) => {
+        for (let i = n + 1; ; i++) {
+          let isPrime = true;
+          for (let j = 2; j * j <= i; j++) {
+            if (i % j === 0) {
+              isPrime = false;
+              break;
+            }
+          }
+          if (isPrime) return i;
+        }
+      };
+      console.log("result", smallestPrimeNumber(3));
+    </script>
+  </body>
+</html>
