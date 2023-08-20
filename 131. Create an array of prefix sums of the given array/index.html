@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create an array of prefix sums of the given array</title>
+  </head>
+  <body>
+    <h1>Create an array of prefix sums of the given array</h1>
+    <h2>Check console for results.</h2>
+    <script>
+      const prefixSumArr = (arr) => {
+        console.log("input arr", arr);
+        const prefixArr = [];
+        let sum = 0;
+        arr.forEach((element) => {
+          sum += element;
+          prefixArr.push(sum);
+        });
+        return prefixArr;
+      };
+      const arr1 = [1, 2, 3, 4, 5];
+      console.log("Result array", prefixSumArr(arr1));
+    </script>
+  </body>
+</html>
