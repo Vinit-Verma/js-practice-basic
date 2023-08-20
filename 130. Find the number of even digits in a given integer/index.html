@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the number of even digits in a given integer</title>
+  </head>
+  <body>
+    <h1>Find the number of even digits in a given integer</h1>
+    <h2>Check console for results.</h2>
+    <script>
+      //   const numberOfEvenDigits = (n) => {
+      //     console.log("input", n);
+      //     const digitArr = String(n).split("");
+      //     let evenDigits = 0;
+      //     digitArr.forEach((ele) => {
+      //       if (ele % 2 === 0) {
+      //         evenDigits++;
+      //       }
+      //     });
+      //     return evenDigits;
+      //   };
+      const numberOfEvenDigits = (n) => {
+        console.log("Input", n);
+        let counter = 0;
+        while (n) {
+          counter += n % 2 === 0;
+          n = Math.floor(n / 10);
+        }
+        return counter;
+      };
+      console.log("Number of even digits", numberOfEvenDigits(123));
+      console.log("Number of even digits", numberOfEvenDigits(1020));
+      console.log("Number of even digits", numberOfEvenDigits(102));
+    </script>
+  </body>
+</html>
