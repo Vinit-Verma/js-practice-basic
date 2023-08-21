@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find all distinct prime factors of a given integer</title>
+  </head>
+  <body>
+    <h1>Find all distinct prime factors of a given integer</h1>
+    <h2>Check console for results.</h2>
+    <script>
+      const primeFactors = (n) => {
+        function isPrime(num) {
+          for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+          }
+          return true;
+        }
+
+        const result = [];
+
+        for (let i = 2; i <= n; i++) {
+          while (isPrime(i) && n % i === 0) {
+            if (!result.includes(i)) {
+              result.push(i);
+            }
+            n /= i;
+          }
+        }
+        return result;
+      };
+      console.log("Result", primeFactors(100));
+    </script>
+  </body>
+</html>
