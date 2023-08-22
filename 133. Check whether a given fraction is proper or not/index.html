@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check whether a given fraction is proper or not</title>
+  </head>
+  <body>
+    <h1>Check whether a given fraction is proper or not</h1>
+    <h2>Check console for results</h2>
+    <script>
+      const isProperFraction = (arr) => {
+        console.log("Input arr", arr);
+        return Math.abs(arr[0] / arr[1]) < 1 ? "Proper" : "Improper";
+      };
+      console.log(isProperFraction([12, 300]), "fraction");
+      console.log(isProperFraction([2, 4]), "fraction");
+      console.log(isProperFraction([103, 3]), "fraction");
+      console.log(isProperFraction([104, 2]), "fraction");
+      console.log(isProperFraction([5, 40]), "fraction");
+    </script>
+  </body>
+</html>
