@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Change the characters (lower case) in a string where a turns into z, b
+      turns into y, c turns into x, ..., n turns into m, m turns into n, ..., z
+      turns into a
+    </title>
+  </head>
+  <body>
+    <h1>
+      Change the characters (lower case) in a string where a turns into z, b
+      turns into y, c turns into x, ..., n turns into m, m turns into n, ..., z
+      turns into a
+    </h1>
+    <h2>Check console for results.</h2>
+    <script>
+      const changeChar = (str) => {
+        console.log("Input string", str);
+        const result = [];
+        for (let i = 0; i < str.charCodeAt(i); i++) {
+          const char_order = str.charCodeAt(i) - "a".charCodeAt(0);
+          const change_char = 25 - char_order + "a".charCodeAt(0);
+          result.push(String.fromCharCode(change_char));
+        }
+        return result.join("");
+      };
+      console.log("result string", changeChar("abcxyz"));
+    </script>
+  </body>
+</html>
